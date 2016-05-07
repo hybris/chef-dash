@@ -25,6 +25,14 @@ describe file '/etc/apache2/sites-available/' + apacheconf_file do
   its(:content) { should match 'SetEnv APPLICATION_ENV "production"' }
 end
 
+describe file('/etc/apt/sources.list.d/pingworks-dashboard.list') do
+  it { should be_file }
+end
+
+describe file('/etc/apt/sources.list.d/pingworks-dashboard.list') do
+  its(:content) { should match '^deb\s*"?https://dash.pingworks.net/debian"?' }
+end
+
 describe package('dash-backend') do
   it { should be_installed }
 end

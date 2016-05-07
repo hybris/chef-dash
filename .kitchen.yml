@@ -7,18 +7,14 @@ provisioner:
   require_chef_omnibus: true
 
 platforms:
-#  - name: debian-7.x
-#    driver:
-#        box: debianstandard_7
-#        box_url: http://vagrantimages.yrdci.fra.hybris.com/debianstandard_20150428_1258.box
-#        network:
-#        - ["forwarded_port", { guest: 80, host: 8181 }]
+  - name: debian-7.7
+    driver:
+        box: opscode_debian-7.7_chef-11.16.4-1
+        box_url: http://vagrant.pingworks.net/opscode_debian-7.7_chef-11.16.4-1.box
   - name: debian-8
     driver:
-        box: debianstandard_8
-        box_url: http://vagrantimages.yrdci.fra.hybris.com/debianstandard_8.box
-#        network:
-#        - ["forwarded_port", { guest: 80, host: 8181 }]
+        box: debian/jessie64
+        box_url: https://atlas.hashicorp.com/debian/boxes/jessie64/versions/8.3.0/providers/virtualbox.box
 
 suites:
   - name: default
@@ -32,5 +28,3 @@ suites:
     run_list:
       - recipe[chef-dash::dash-scripts]
     attributes: {}
-    network:
-    - ["forwarded_port", { guest: 80, host: 8080 }]
