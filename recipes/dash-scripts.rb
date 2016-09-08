@@ -19,3 +19,9 @@
 
 include_recipe "chef-dash::dash-scripts-install-#{node['chef-dash']['package']['install_method']}"
 include_recipe 'chef-dash::dash-scripts-install-tpl'
+
+package 'dash-backend' do
+  version node['chef-dash']['package']['version']
+  options "--force-yes -o Dpkg::Options::='--force-confnew'"
+  action :install
+end
