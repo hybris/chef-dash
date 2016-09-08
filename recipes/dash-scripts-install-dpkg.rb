@@ -20,7 +20,7 @@
 remote_file "#{Chef::Config[:file_cache_path]}/dash-scripts_#{node['chef-dash']['package']['version']}_all.deb" do
   source "#{node['dpkg']['scripts-url']}/dash-scripts_#{node['chef-dash']['package']['version']}_all.deb"
 end
- -
+
 dpkg_package 'dash-scripts' do
   source "#{Chef::Config[:file_cache_path]}/dash-scripts_#{node['chef-dash']['package']['version']}_all.deb"
   action :install
