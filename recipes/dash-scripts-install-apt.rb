@@ -22,6 +22,6 @@ include_recipe 'chef-dash::dash-debian-repo'
 
 package 'dash-scripts' do
   version node['chef-dash']['package']['version']
-  options "-o Dpkg::Options::='--force-confnew'"
+  options "--force-yes -o Dpkg::Options::='--force-confnew'"
   action :install
 end
