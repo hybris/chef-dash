@@ -22,8 +22,8 @@ remote_file "#{Chef::Config[:file_cache_path]}/dash-frontend_#{node['chef-dash']
 end
 
 dpkg_package 'dash-frontend' do
--  source "#{Chef::Config[:file_cache_path]}/dash-frontend_#{node['chef-dash']['package']['version']}_all.deb"
-  action :install
--end
+ source "#{Chef::Config[:file_cache_path]}/dash-frontend_#{node['chef-dash']['package']['version']}_all.deb"
+ action :install
+end
 
 include_recipe 'chef-dash::dash-frontend-install-tpl'
