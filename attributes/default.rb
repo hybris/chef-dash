@@ -5,8 +5,6 @@ default['chef-dash']['pipelinestages'] = 3
 
 default['chef-dash']['zendframework']['version'] = '1.12.9+dfsg-2+deb8u5'
 
-<<<<<<< HEAD
-=======
 # default['chef-dash']['package']['install_method'] = 'dpkg'
 
 # Set a default for using a corporate repo for packages or not.
